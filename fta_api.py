@@ -1,6 +1,6 @@
 # fta_api.py
 """
-故障树分析 (Fault Tree Analysis, FTA) API 模块
+故障树分析 (Fault Tree Analysis, FTA) API 模块(源于fastAPI v1.0.0)
 
 本模块负责处理所有与FTA相关的后端逻辑与API接口。
 它提供了一个专业的分析工具，用于对复杂系统的故障逻辑进行定性和定量评估。
@@ -227,4 +227,5 @@ def analyze_fault_tree(request: FTAnalysisRequest):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
+
         raise HTTPException(status_code=500, detail=f"执行分析时发生未知错误: {str(e)}")
